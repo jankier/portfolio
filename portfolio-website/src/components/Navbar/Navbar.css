@@ -1,0 +1,204 @@
+@media only screen and (max-width: 1060px) {
+  .navbar-section-closed {
+    left: -90px !important;
+  }
+}
+
+.navbar-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: var(--sidebar-background);
+  padding: 10px 14px;
+  user-select: none;
+  transition: 0.5s ease-in-out;
+}
+
+.navbar-section-closed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background-color: var(--sidebar-background);
+  padding: 10px 14px;
+  user-select: none;
+  transition: 0.5s ease-in-out;
+}
+
+.navbar-section-closed .text {
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.navbar-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+}
+
+.text {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0.3s, color 0.5s ease-in-out;
+  white-space: nowrap;
+}
+
+.navbar-logo {
+  background-color: var(--primary);
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.logo-text {
+  font-family: "Days One", sans-serif;
+  font-size: 2rem;
+  color: var(--sidebar-background);
+}
+
+.navbar-description {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1rem;
+  padding-left: 16px;
+  color: var(--text);
+}
+
+.profession {
+  font-weight: 400;
+  margin-top: -5px;
+}
+
+.navbar-toggle {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 30%;
+  right: -45px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: var(--sidebar-background);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-toggle-reverse {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 30%;
+  right: -45px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: var(--sidebar-background);
+  cursor: pointer;
+  transform: rotateY(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85%;
+  padding-top: 3rem;
+}
+
+.elements-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.theme-button {
+  position: relative;
+  text-decoration: none;
+  color: var(--text);
+  background-color: var(--secondary);
+  transition: color 0.7s ease-in-out;
+  font-weight: 400;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.moon-sun-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  padding-left: 0.2rem;
+  align-items: center;
+}
+
+.moon-sun-icon.light > .sun {
+  opacity: 0;
+}
+
+.moon-sun-icon.light > .moon {
+  opacity: 1;
+}
+
+.moon-sun-icon.dark > .moon {
+  opacity: 0;
+}
+
+.moon-sun-icon.dark > .sun {
+  opacity: 1;
+}
+
+.icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-mode-switch {
+  height: 100%;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+}
+
+.toggle-mode-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch {
+  position: absolute;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background-color: var(--primary);
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  top: 4px;
+  left: 5px;
+  background-color: var(--sidebar-background);
+  transition: 0.5s;
+}
+
+input:checked + .switch::before {
+  transform: translateX(21px);
+}

@@ -1,0 +1,26 @@
+:root {
+  --text: #707070;
+  --background: #e4e9f7;
+  --sidebar-background: #fff;
+  --primary: #695cfe;
+  --secondary: #f6f5ff;
+}
+
+[data-theme="dark"] {
+  --text: #ccc;
+  --background: #18191a;
+  --primary: #695cfe;
+  --secondary: #3a3b3c;
+  --sidebar-background: #242526;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
