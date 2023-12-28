@@ -1,0 +1,144 @@
+@media only screen and (max-width: 1060px) {
+  .about-section {
+    padding-top: 4rem !important;
+  }
+  .profile-img-text {
+    flex-direction: column !important;
+  }
+  .profile-text {
+    padding-left: 0 !important;
+    padding-top: 1rem;
+  }
+  .profile-img-container {
+    display: flex;
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .profile-text > :nth-child(2) {
+    font-size: 2.8rem !important;
+  }
+  .profile-text > :nth-child(3) {
+    font-size: 1.5rem !important;
+  }
+  .profile-buttons {
+    gap: 0.5rem !important;
+  }
+  .btn {
+    width: 110px !important;
+  }
+}
+
+.about {
+  transition: 0.5s ease-in-out;
+  background-color: var(--background);
+  user-select: none;
+  height: 100%;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12rem;
+  width: 80%;
+  margin: auto;
+}
+
+.profile-img-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+.profile-img-container {
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background-color: azure;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.profile-img-container > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 6rem;
+  text-align: center;
+}
+
+.writing-text > :nth-child(1) {
+  font-size: 1.2rem;
+  transition: color 0.5s ease-in-out;
+  color: var(--text);
+}
+
+.profile-text-elements {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile-text-elements > :nth-child(1) {
+  font-size: 3rem;
+  transition: 0.5s ease-in-out;
+  color: var(--sidebar-background);
+}
+
+.profile-text-elements > :nth-child(2) {
+  font-size: 1.75rem;
+  transition: 0.5s ease-in-out;
+  color: var(--text);
+}
+
+.profile-button-elements {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.btn {
+  border: none;
+  background-color: var(--primary);
+  color: var(--sidebar-background);
+  padding: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  width: 120px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+  color: var(--text);
+}
+
+.profile-links {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+
+.link {
+  transition: 0.5s ease-in-out;
+  color: var(--text);
+}
+
+.link:hover {
+  color: var(--primary);
+}

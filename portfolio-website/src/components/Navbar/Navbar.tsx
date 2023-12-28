@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
-  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(true);
 
   const setDarkMode = () => {
     document.querySelector("body")?.setAttribute("data-theme", "dark");
