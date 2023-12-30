@@ -7,12 +7,10 @@
   }
   .profile-text {
     padding-left: 0 !important;
-    padding-top: 1rem;
+    padding-top: 2rem !important;
   }
   .profile-img-container {
     display: flex;
-    width: 300px !important;
-    height: 300px !important;
   }
   .profile-text > :nth-child(2) {
     font-size: 2.8rem !important;
@@ -25,6 +23,24 @@
   }
   .btn {
     width: 110px !important;
+  }
+  .about-me {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .about-me-img-desc {
+    flex-direction: column !important;
+  }
+  .exp-edu-text {
+    flex-direction: column !important;
+  }
+  .about-me-desc {
+    max-width: 300px !important;
+  }
+  .img-desc-right {
+    padding-top: 4rem !important;
+    padding-left: 0 !important;
   }
 }
 
@@ -39,6 +55,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 12rem;
+  padding-bottom: 12rem;
   width: 80%;
   margin: auto;
 }
@@ -47,21 +64,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 4rem;
+  padding-bottom: 20rem;
 }
 
 .profile-img-container {
-  width: 480px;
-  height: 480px;
-  border-radius: 50%;
   background-color: azure;
   overflow: hidden;
   transition: 0.5s ease-in-out;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-img-container > img {
   width: 100%;
   height: auto;
+  max-width: 480px;
   object-fit: cover;
 }
 
@@ -73,7 +92,7 @@
 }
 
 .writing-text > :nth-child(1) {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: color 0.5s ease-in-out;
   color: var(--text);
 }
@@ -141,4 +160,119 @@
 
 .link:hover {
   color: var(--primary);
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 6rem;
+}
+
+.about-me-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.about-me-text > :nth-child(1) {
+  font-size: 1.2rem;
+  transition: color 0.5s ease-in-out;
+  color: var(--text);
+}
+
+.about-me-text > :nth-child(2) {
+  font-size: 3rem;
+  transition: color 0.5s ease-in-out;
+  color: var(--sidebar-background);
+}
+
+.about-me-img-desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-desc-left {
+  display: flex;
+  z-index: 0;
+}
+
+.img-desc-left > img {
+  width: 100%;
+  height: auto;
+  max-width: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.img-desc-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 4rem;
+}
+
+.exp-edu-text {
+  display: flex;
+  gap: 2rem;
+}
+
+.exp-edu-text > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--sidebar-background);
+  border-radius: 20px;
+  width: 100%;
+  max-width: calc(300px - 4rem);
+  padding: 2rem;
+  color: var(--text);
+  text-align: center;
+  font-size: 1rem;
+  transition: 0.5s ease-in-out;
+}
+
+.experience-container > :nth-child(2) {
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+}
+
+.experience-icon {
+  width: 32px;
+  height: 32px;
+  transition: 0.5s ease-in-out;
+  color: var(--text);
+}
+
+.education-container > :nth-child(2) {
+  font-size: 1.1rem;
+  padding-bottom: 0.5rem;
+}
+
+.education-container > :nth-child(5) {
+  font-size: 0.9rem;
+}
+
+.education-icon {
+  color: var(--text);
+  transition: 0.5s ease-in-out;
+  width: 32px;
+  height: 32px;
+}
+
+.about-me-desc {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  padding-top: 2rem;
+  color: var(--text);
+  gap: 0.3rem;
+}
+
+.about-me-desc > span {
+  display: flex;
 }

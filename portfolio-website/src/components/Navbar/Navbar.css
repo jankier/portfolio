@@ -4,10 +4,6 @@
   }
 }
 
-.navbar {
-  z-index: 100;
-}
-
 .navbar-section {
   position: fixed;
   top: 0;
@@ -18,6 +14,7 @@
   padding: 10px 14px;
   user-select: none;
   transition: 0.5s ease-in-out;
+  z-index: 100;
 }
 
 .navbar-section-closed {
@@ -30,6 +27,7 @@
   padding: 10px 14px;
   user-select: none;
   transition: 0.5s ease-in-out;
+  z-index: 100;
 }
 
 .navbar-section-closed .text {

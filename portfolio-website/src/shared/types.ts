@@ -4,3 +4,9 @@ export enum SelectedPage {
   Projects = "projects",
   Contact = "contact",
 }
+
+export type ExperienceType = {
+  icon: JSX.Element;
+  title: string;
+  level: string;
+};

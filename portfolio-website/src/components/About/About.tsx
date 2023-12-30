@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { SelectedPage } from "../../shared/types";
 import { useTypewriter } from "react-simple-typewriter";
+import { useRef } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import profile_img from "../../assets/profile-img.png";
+import profile_img_2 from "../../assets/profile-img-2.png";
 import cv from "../../assets/CV.pdf";
 import "./About.css";
 
@@ -13,6 +15,18 @@ type Props = {
 
 const About = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
+
+  const profile_img_2_ref = useRef(null);
+  const isInView_profile_img_2 = useInView(profile_img_2_ref, {
+    once: true,
+    amount: 0.1,
+  });
+
+  const desc_text_ref = useRef(null);
+  const isInView_desc_text = useInView(desc_text_ref, {
+    once: true,
+    amount: 0.5,
+  });
 
   const [text, helper] = useTypewriter({
     words: ["Jan Kierejsza", "a Front-end developer", " "],
@@ -40,6 +54,10 @@ const About = ({ setSelectedPage }: Props) => {
       y: 0,
     };
   }
+
+  const decsciption_text: string =
+    "I am currently enrolled as a student at the Warsaw University of Technology on my last semester of Master's studies in the field of Automation, Robotics and Industrial Computer Science. I am looking for a job that will allow me to further develop my skills and at the same time I am working on my own projects.";
+  const splitted_description_text: Array<string> = decsciption_text.split(" ");
 
   return (
     <div id="about" className="about">
@@ -145,6 +163,119 @@ const About = ({ setSelectedPage }: Props) => {
                 </a>
               </div>
             </motion.div>
+          </div>
+        </div>
+        <div className="about-me">
+          <div className="about-me-text">
+            <motion.span
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 1 }}
+              transition={{ duration: 1 }}
+              variants={{
+                hidden: { opacity: 0, x: -100 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              Get to Know More
+            </motion.span>
+            <motion.span
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1 }}
+              variants={{
+                hidden: { opacity: 0, x: 100 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
+              About Me
+            </motion.span>
+          </div>
+          <div className="about-me-img-desc">
+            <motion.div
+              ref={profile_img_2_ref}
+              className="img-desc-left"
+              animate={{
+                opacity: isInView_profile_img_2 ? 1 : 0,
+                x: isInView_profile_img_2 ? 0 : -300,
+                rotate: isInView_profile_img_2 ? 360 : 0,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 40,
+              }}
+            >
+              <img src={profile_img_2} alt="profile picture 2"></img>
+            </motion.div>
+            <div className="img-desc-right">
+              <div className="exp-edu-text">
+                <div className="experience-container">
+                  <div className="experience-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
+                      />
+                    </svg>
+                  </div>
+                  <span>Experience</span>
+                  <span>
+                    Currently looking to get my first commercial experience
+                  </span>
+                </div>
+                <div className="education-container">
+                  <div className="education-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+                      />
+                    </svg>
+                  </div>
+                  <span>Education</span>
+                  <span>B.Sc. Bachelors Degree</span>
+                  <span>M.Sc. Masters Degree</span>
+                  <span>(currently enrolled)</span>
+                </div>
+              </div>
+              <div ref={desc_text_ref} className="about-me-desc">
+                {splitted_description_text.map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{
+                      opacity: 0,
+                      y: i % 2 === 0 ? -100 : 100,
+                      x: i % 3 === 0 ? -100 : 100,
+                    }}
+                    animate={{
+                      opacity: isInView_desc_text ? 1 : 0,
+                      y: isInView_desc_text ? 0 : i % 2 === 0 ? -100 : 100,
+                      x: isInView_desc_text ? 0 : i % 3 === 0 ? -100 : 100,
+                    }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
