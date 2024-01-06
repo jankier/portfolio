@@ -1,4 +1,7 @@
 :root {
+}
+
+[data-theme="light"] {
   --text: #707070;
   --background: #e4e9f7;
   --sidebar-background: #fff;
@@ -22,5 +25,12 @@
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+  background-color: var(--background);
+  -webkit-transition: 0.1s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
 }

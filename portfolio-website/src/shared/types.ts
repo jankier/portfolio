@@ -10,3 +10,10 @@ export type ExperienceType = {
   title: string;
   level: string;
 };
+
+export type ProjectType = {
+  image: JSX.Element;
+  title: string;
+  github: string;
+  demo: string;
+};

@@ -26,6 +26,8 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
 
   if (selectedTheme === "dark") {
     setDarkMode();
+  } else {
+    setLightMode();
   }
 
   const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {

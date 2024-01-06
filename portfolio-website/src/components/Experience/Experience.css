@@ -1,4 +1,8 @@
 @media only screen and (max-width: 1060px) {
+  .experience-section {
+    padding-bottom: 4rem !important;
+    padding-top: 4rem !important;
+  }
   .experience-elements {
     flex-direction: column !important;
   }

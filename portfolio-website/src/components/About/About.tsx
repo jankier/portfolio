@@ -29,7 +29,7 @@ const About = ({ setSelectedPage }: Props) => {
   });
 
   const [text, helper] = useTypewriter({
-    words: ["Jan Kierejsza", "a Front-end developer", " "],
+    words: ["Jan Kierejsza", "Front-end developer", " "],
     loop: 1,
     typeSpeed: 70,
     deleteSpeed: 50,
@@ -170,7 +170,7 @@ const About = ({ setSelectedPage }: Props) => {
             <motion.span
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 1 }}
+              viewport={{ once: true, amount: 0.9 }}
               transition={{ duration: 1 }}
               variants={{
                 hidden: { opacity: 0, x: -100 },
@@ -198,12 +198,11 @@ const About = ({ setSelectedPage }: Props) => {
               className="img-desc-left"
               animate={{
                 opacity: isInView_profile_img_2 ? 1 : 0,
-                x: isInView_profile_img_2 ? 0 : -300,
-                rotate: isInView_profile_img_2 ? 360 : 0,
+                scale: isInView_profile_img_2 ? 1 : 0.75,
               }}
               transition={{
                 type: "spring",
-                stiffness: 40,
+                stiffness: 200,
               }}
             >
               <img src={profile_img_2} alt="profile picture 2"></img>
@@ -261,15 +260,13 @@ const About = ({ setSelectedPage }: Props) => {
                     key={i}
                     initial={{
                       opacity: 0,
-                      y: i % 2 === 0 ? -100 : 100,
-                      x: i % 3 === 0 ? -100 : 100,
+                      y: i % 2 === 0 ? -25 : 25,
                     }}
                     animate={{
                       opacity: isInView_desc_text ? 1 : 0,
-                      y: isInView_desc_text ? 0 : i % 2 === 0 ? -100 : 100,
-                      x: isInView_desc_text ? 0 : i % 3 === 0 ? -100 : 100,
+                      y: isInView_desc_text ? 0 : i % 2 === 0 ? -25 : 25,
                     }}
-                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                    transition={{ duration: 0.2, delay: i * 0.05 }}
                   >
                     {word}
                   </motion.span>
