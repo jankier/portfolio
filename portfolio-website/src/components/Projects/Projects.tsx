@@ -28,7 +28,7 @@ const Projects = ({ setSelectedPage }: Props) => {
           <motion.span
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 1 }}
+            viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 1 }}
             variants={{
               hidden: { opacity: 0, x: -100 },
