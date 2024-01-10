@@ -47,6 +47,7 @@ const Experience = ({ setSelectedPage }: Props) => {
         </div>
         <div className="experience-elements" ref={skills_ref}>
           <div className="frontend-container">
+            <div className="frontend-container-bg"></div>
             <span>Front-end Development</span>
             <div className="skills">
               {frontend_experience.map((skill: ExperienceType, i) => (
@@ -75,6 +76,7 @@ const Experience = ({ setSelectedPage }: Props) => {
             </div>
           </div>
           <div className="backend-container">
+            <div className="backend-container-bg"></div>
             <span>Back-end Development</span>
             <div className="skills">
               {backend_experience.map((skill: ExperienceType, i) => (

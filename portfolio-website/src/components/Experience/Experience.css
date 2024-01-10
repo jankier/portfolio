@@ -9,13 +9,14 @@
   .skills {
     display: flex !important;
     flex-direction: column !important;
+    align-items: start !important;
+    margin-left: calc(50% - 4.5rem) !important;
   }
 }
 
 .experience {
   display: flex;
   justify-content: center;
-  background-color: var(--background);
   transition: 0.5s ease-in-out;
 }
 
@@ -48,6 +49,7 @@
   font-size: 3rem;
   transition: color 0.5s ease-in-out;
   color: var(--sidebar-background);
+  text-shadow: 4px 2px 0px #18191a;
 }
 
 .experience-elements {
@@ -55,18 +57,109 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 8rem;
 }
 
 .experience-elements > div {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--sidebar-background);
-  padding: 4rem;
   border-radius: 20px;
   transition: 0.5s ease-in-out;
   text-align: center;
   min-height: 280px;
+}
+
+.frontend-container {
+  position: relative;
+  padding: 4rem;
+}
+
+.backend-container {
+  position: relative;
+  padding: 4rem;
+}
+
+.frontend-container-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  --c: var(--cube1) 25%, var(--cube3) 0 50%, var(--sidebar-background) 0 75%,
+    var(--cube1) 0;
+}
+.frontend-container-bg:before {
+  content: "";
+  background: linear-gradient(90deg, var(--c)),
+    linear-gradient(-90deg, var(--c));
+  background-size: 400% 52%;
+  background-repeat: no-repeat;
+  animation: l13 6s infinite;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.frontend-container-bg:after {
+  content: "";
+  background: linear-gradient(90deg, var(--c)),
+    linear-gradient(-90deg, var(--c));
+  background-size: 400% 52%;
+  background-repeat: no-repeat;
+  animation: l13 6s infinite;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.backend-container-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  --c: var(--cube1) 25%, var(--cube3) 0 50%, var(--sidebar-background) 0 75%,
+    var(--cube1) 0;
+}
+.backend-container-bg:before {
+  content: "";
+  background: linear-gradient(90deg, var(--c)),
+    linear-gradient(-90deg, var(--c));
+  background-size: 400% 52%;
+  background-repeat: no-repeat;
+  animation: l13 6s infinite;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.backend-container-bg:after {
+  content: "";
+  background: linear-gradient(90deg, var(--c)),
+    linear-gradient(-90deg, var(--c));
+  background-size: 400% 52%;
+  background-repeat: no-repeat;
+  animation: l13 6s infinite;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+@keyframes l13 {
+  0% {
+    background-position: calc(3 * 100% / 3) 0, calc(0 * 100% / 3) 100%;
+  }
+  23%,
+  33% {
+    background-position: calc(2 * 100% / 3) 0, calc(1 * 100% / 3) 100%;
+  }
+  56%,
+  66% {
+    background-position: calc(1 * 100% / 3) 0, calc(2 * 100% / 3) 100%;
+  }
+  90%,
+  100% {
+    background-position: calc(0 * 100% / 3) 0, calc(3 * 100% / 3) 100%;
+  }
 }
 
 .experience-elements > div > span {
