@@ -6,8 +6,24 @@ html {
   font-weight: 400;
   height: 100%;
   margin: 0;
-  transition: background-color 0.5s ease-in-out;
-  background-color: var(--background);
+  --s: 800px;
+  --c1: var(--cube1);
+  --c2: var(--cube2);
+  --c3: var(--cube3);
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
 }
 
 /* html {font-size: 100%;} 16px */
