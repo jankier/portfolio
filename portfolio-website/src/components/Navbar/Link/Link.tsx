@@ -27,6 +27,7 @@ const Link = ({
         selectedPage === lowerCasePage ? "selected-page" : "list-element"
       }`}
       href={`#${lowerCasePage}`}
+      offset="-1px"
       onClick={() => {
         setSelectedPage(lowerCasePage);
         setIsMenuToggled(true);
