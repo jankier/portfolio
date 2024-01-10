@@ -6,12 +6,17 @@
     padding-bottom: 4rem !important;
     padding-top: 4rem !important;
   }
+  .project-buttons {
+    flex-direction: column !important;
+  }
+  .project-btn {
+    width: 40% !important;
+  }
 }
 
 .projects {
   display: flex;
   justify-content: center;
-  background-color: var(--background);
   transition: 0.5s ease-in-out;
 }
 
@@ -44,6 +49,7 @@
   font-size: 3rem;
   transition: color 0.5s ease-in-out;
   color: var(--sidebar-background);
+  text-shadow: 4px 2px 0px #18191a;
 }
 
 .projects-elements {
@@ -60,37 +66,134 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--sidebar-background);
   transition: 0.5s ease-in-out;
   border-radius: 20px;
   padding: 2rem;
   gap: 1rem;
+  position: relative;
 }
 
-.single-project > span {
+.single-project-bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  animation: l3 8s infinite;
+  &.c0 {
+    background: linear-gradient(45deg, var(--cube1) 50%, #0000 0),
+      linear-gradient(-45deg, var(--cube2) 50%, #0000 0),
+      linear-gradient(45deg, #0000 50%, #89b2f0ff 0),
+      linear-gradient(-45deg, #0000 50%, var(--cube3) 0), var(--cube1);
+    background-size: 200% 200%;
+  }
+  &.c1 {
+    background: linear-gradient(45deg, var(--cube1) 50%, #0000 0),
+      linear-gradient(-45deg, #a3cfa5ff 50%, #0000 0),
+      linear-gradient(45deg, #0000 50%, var(--sidebar-background) 0),
+      linear-gradient(-45deg, #0000 50%, var(--cube3) 0), var(--cube1);
+    background-size: 200% 200%;
+  }
+  &.c2 {
+    background-repeat: no-repeat;
+    background: linear-gradient(45deg, #fcd44eff 50%, #0000 0),
+      linear-gradient(-45deg, var(--cube2) 50%, #0000 0),
+      linear-gradient(45deg, #0000 50%, var(--sidebar-background) 0),
+      linear-gradient(-45deg, #0000 50%, var(--cube3) 0), #fcd44eff;
+    background-size: 200% 200%;
+  }
+}
+@keyframes l3 {
+  0% {
+    background-position: 100% 0, 0 0, 0 100%, 100% 100%;
+  }
+  15%,
+  25% {
+    background-position: 100% 0, 0 0, 0 100%, 0 0;
+  }
+  40%,
+  50% {
+    background-position: 100% 0, 0 0, 100% 0, 0 0;
+  }
+  65%,
+  75% {
+    background-position: 100% 0, 100% 100%, 100% 0, 0 0;
+  }
+  90%,
+  100% {
+    background-position: 0 100%, 100% 100%, 100% 0, 0 0;
+  }
+}
+
+.project-title {
   font-size: 1.75rem;
   transition: 0.5s ease-in-out;
-  color: var(--text);
+  word-break: break-all;
+  text-align: center;
 }
 
 .single-project-img {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.single-project-img:hover .project-desc {
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s ease-in-out;
+}
+
+.single-project-img:hover .project-desc > div {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s ease-in-out 0.5s;
 }
 
 .single-project-img > img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  max-width: 300px;
   border-radius: 20px;
+}
+
+.project-desc {
+  position: absolute;
+  background-color: #1b1b1b80;
+  width: inherit;
+  height: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  color: #e4e9f7;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.project-desc > div {
+  width: inherit;
+  height: 100%;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-buttons {
   display: flex;
   gap: 1rem;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-btn {
@@ -103,8 +206,8 @@
   transition: 0.5s ease-in-out;
   font-weight: 400;
   font-size: 1rem;
+  width: 80%;
   font-family: "Poppins", sans-serif;
-  width: 120px;
   text-decoration: none;
   display: flex;
   justify-content: center;
