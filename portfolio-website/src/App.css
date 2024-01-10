@@ -7,6 +7,10 @@
   --sidebar-background: #fff;
   --primary: #695cfe;
   --secondary: #f6f5ff;
+  --cube1: #e2e2e2;
+  --cube2: #b1b0ae;
+  --cube3: #c3c3c3;
+  --text-shadow: #18191a;
 }
 
 [data-theme="dark"] {
@@ -15,6 +19,10 @@
   --primary: #695cfe;
   --secondary: #3a3b3c;
   --sidebar-background: #242526;
+  --cube1: #1d1d1d;
+  --cube2: #4e4f51;
+  --cube3: #3c3c3c;
+  --text-shadow: #e4e9f7;
 }
 
 .App {
