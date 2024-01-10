@@ -43,7 +43,7 @@ export const frontend_experience: Array<ExperienceType> = [
       </svg>
     ),
     title: "TypeScript",
-    level: "Intermediate",
+    level: "Advanced Beginner",
   },
   {
     icon: (
@@ -92,7 +92,7 @@ export const frontend_experience: Array<ExperienceType> = [
       </svg>
     ),
     title: "React.js",
-    level: "Intermediate",
+    level: "Advanced Beginner",
   },
   {
     icon: (
