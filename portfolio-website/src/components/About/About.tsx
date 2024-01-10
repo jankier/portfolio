@@ -170,7 +170,7 @@ const About = ({ setSelectedPage }: Props) => {
             <motion.span
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.9 }}
+              viewport={{ once: true, amount: 0.7 }}
               transition={{ duration: 1 }}
               variants={{
                 hidden: { opacity: 0, x: -100 },
@@ -193,20 +193,44 @@ const About = ({ setSelectedPage }: Props) => {
             </motion.span>
           </div>
           <div className="about-me-img-desc">
-            <motion.div
-              ref={profile_img_2_ref}
-              className="img-desc-left"
-              animate={{
-                opacity: isInView_profile_img_2 ? 1 : 0,
-                scale: isInView_profile_img_2 ? 1 : 0.75,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 80,
-              }}
-            >
-              <img src={profile_img_2} alt="profile picture 2"></img>
-            </motion.div>
+            <div className="circle-text-img">
+              <motion.div
+                ref={profile_img_2_ref}
+                className="img-desc-left"
+                animate={{
+                  opacity: isInView_profile_img_2 ? 1 : 0,
+                  scale: isInView_profile_img_2 ? 1 : 0.75,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 80,
+                }}
+              >
+                <img src={profile_img_2} alt="profile picture 2"></img>
+              </motion.div>
+              <div>
+                <div className="rounded-text rotating">
+                  <svg viewBox="0 0 200 200">
+                    <path
+                      id="textPath"
+                      d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0"
+                      transform="translate(100,100)"
+                      fill="none"
+                      stroke-width="0"
+                    ></path>
+                    <g font-size="0.45rem">
+                      <text text-anchor="start">
+                        <textPath xlinkHref="#textPath" startOffset="0%">
+                          - Jan Kierejsza - Student - Front-end Developer -
+                          Independent Designer - Fast Learner - Eager To Create
+                          - Strong Communication Abilities
+                        </textPath>
+                      </text>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
             <div className="img-desc-right">
               <div className="exp-edu-text">
                 <div className="experience-container">

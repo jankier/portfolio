@@ -193,11 +193,39 @@
   align-items: center;
 }
 
+.circle-text-img {
+  position: relative;
+}
+
 .img-desc-left {
   display: flex;
   z-index: 0;
   border-radius: 50%;
   overflow: hidden;
+  position: relative;
+}
+
+.rounded-text {
+  position: absolute;
+  z-index: 5;
+  left: -2.5rem;
+  top: -2.5rem;
+  width: calc(100% + 5rem);
+  height: calc(100% + 5rem);
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  fill: var(--text);
+}
+@keyframes rotating {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.rotating {
+  animation: rotating 18s linear infinite;
 }
 
 .img-desc-left > img {
