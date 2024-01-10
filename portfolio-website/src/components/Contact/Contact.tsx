@@ -68,7 +68,7 @@ const Contact = ({ setSelectedPage }: Props) => {
             className="form"
             target="_self"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/2d0d0471328a2ea725b03c9d55a23632"
+            action="https://formsubmit.co/c415157c30e0f9220f114942ba57e73a"
             method="POST"
           >
             <input
