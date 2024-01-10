@@ -4,8 +4,8 @@ import { useTypewriter } from "react-simple-typewriter";
 import { useRef } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import profile_img from "../../assets/profile-img.png";
-import profile_img_2 from "../../assets/profile-img-2.png";
+import profile_img from "../../assets/profile-img.jpg";
+import profile_img_2 from "../../assets/profile-img-2.jpg";
 import cv from "../../assets/CV.pdf";
 import "./About.css";
 
@@ -202,7 +202,7 @@ const About = ({ setSelectedPage }: Props) => {
               }}
               transition={{
                 type: "spring",
-                stiffness: 200,
+                stiffness: 80,
               }}
             >
               <img src={profile_img_2} alt="profile picture 2"></img>
@@ -210,6 +210,7 @@ const About = ({ setSelectedPage }: Props) => {
             <div className="img-desc-right">
               <div className="exp-edu-text">
                 <div className="experience-container">
+                  <div className="loader"></div>
                   <div className="experience-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -232,6 +233,7 @@ const About = ({ setSelectedPage }: Props) => {
                   </span>
                 </div>
                 <div className="education-container">
+                  <div className="loader1"></div>
                   <div className="education-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

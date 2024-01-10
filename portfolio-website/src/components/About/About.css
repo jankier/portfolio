@@ -47,7 +47,6 @@
 
 .about {
   transition: 0.5s ease-in-out;
-  background-color: var(--background);
   user-select: none;
   height: 100%;
 }
@@ -106,6 +105,7 @@
   font-size: 3rem;
   transition: 0.5s ease-in-out;
   color: var(--sidebar-background);
+  text-shadow: 4px 2px 0px #18191a;
 }
 
 .profile-text-elements > :nth-child(2) {
@@ -184,6 +184,7 @@
   font-size: 3rem;
   transition: color 0.5s ease-in-out;
   color: var(--sidebar-background);
+  text-shadow: 4px 2px 0px #18191a;
 }
 
 .about-me-img-desc {
@@ -195,6 +196,8 @@
 .img-desc-left {
   display: flex;
   z-index: 0;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .img-desc-left > img {
@@ -223,15 +226,85 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--sidebar-background);
   border-radius: 20px;
   width: 100%;
-  max-width: calc(300px - 4rem);
+  max-width: calc(250px - 4rem);
   padding: 2rem;
   color: var(--text);
   text-align: center;
   font-size: 1rem;
   transition: 0.5s ease-in-out;
+  z-index: 10;
+}
+
+.experience-container {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  width: 210px;
+  aspect-ratio: 1;
+  border: 3px solid;
+  animation: l1 5s infinite;
+  transition: border 0.5s ease-in-out;
+}
+@keyframes l1 {
+  0% {
+    border-radius: 50% 50% 0 0;
+    border-color: var(--cube1);
+  }
+  25% {
+    border-radius: 0 50% 50% 0;
+    border-color: var(--cube3);
+  }
+  50% {
+    border-radius: 0 0 50% 50%;
+    border-color: var(--cube2);
+  }
+  75% {
+    border-radius: 50% 0 0 50%;
+    border-color: var(--sidebar-background);
+  }
+  100% {
+    border-radius: 50% 50% 0 0;
+    border-color: var(--cube1);
+  }
+}
+
+.education-container {
+  position: relative;
+}
+
+.loader1 {
+  position: absolute;
+  width: 210px;
+  aspect-ratio: 1;
+  border: 3px solid;
+  animation: l2 5s infinite;
+  transition: border 0.5s ease-in-out;
+}
+@keyframes l2 {
+  0% {
+    border-radius: 0 0 50% 50%;
+    border-color: var(--cube1);
+  }
+  25% {
+    border-radius: 50% 0 0 50%;
+    border-color: var(--cube3);
+  }
+  50% {
+    border-radius: 50% 50% 0 0;
+    border-color: var(--cube2);
+  }
+  75% {
+    border-radius: 0 50% 50% 0;
+    border-color: var(--sidebar-background);
+  }
+  100% {
+    border-radius: 0 0 50% 50%;
+    border-color: var(--cube1);
+  }
 }
 
 .experience-container > :nth-child(2) {
