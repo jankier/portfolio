@@ -1,4 +1,33 @@
 @media only screen and (max-width: 1060px) {
+  .contact-elements {
+    flex-direction: column-reverse !important;
+  }
+  .animated-text {
+    font-size: 2.5rem !important;
+    min-height: 250px !important;
+    max-width: 300px !important;
+    padding-bottom: 2rem !important;
+  }
+  .word1 {
+    top: 0 !important;
+    left: 0 !important;
+  }
+  .word2 {
+    top: 30px !important;
+    left: 60px !important;
+  }
+  .word3 {
+    top: 20px !important;
+    left: 130px !important;
+  }
+  .word4 {
+    top: 100px !important;
+    left: 20px !important;
+  }
+  .arrow {
+    top: 200px !important;
+    transform: rotate(90deg) !important;
+  }
   .form {
     align-items: center !important;
   }
@@ -53,10 +82,15 @@
 
 .contact-elements {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-form {
   display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-content {
@@ -85,7 +119,7 @@
   border-radius: 30px;
   padding-left: 2rem;
   padding-right: 2rem;
-  width: 25%;
+  width: 50%;
   transition: 0.5s ease-in-out;
   border: 2px solid var(--text);
 }
@@ -111,7 +145,7 @@
   padding-right: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  width: 25%;
+  width: 50%;
   transition: 0.5s ease-in-out;
   resize: none;
   border: 2px solid var(--text);
@@ -154,4 +188,74 @@
 .form-button:hover {
   background-color: var(--secondary);
   color: var(--text);
+}
+
+.animated-text {
+  font-size: 3rem;
+  min-width: 250px;
+  position: relative;
+}
+
+.word1 {
+  position: absolute;
+  left: 0;
+  top: -150px;
+  color: var(--text);
+}
+
+.word2 {
+  position: absolute;
+  left: 70px;
+  top: -120px;
+  color: var(--primary);
+}
+
+.word3 {
+  position: absolute;
+  left: 155px;
+  top: -110px;
+  color: var(--text);
+}
+
+.word4 {
+  position: absolute;
+  left: 0;
+  top: -35px;
+  color: var(--text);
+}
+
+.arrow {
+  position: absolute;
+  left: 90px;
+  top: 50px;
+  width: 80px;
+  height: 40px;
+  display: grid;
+  overflow: hidden;
+}
+.arrow:before,
+.arrow:after {
+  content: "";
+  grid-area: 1/1;
+  background: var(--primary);
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 30px) 10px,
+    calc(100% - 30px) 0,
+    100% 50%,
+    calc(100% - 30px) 100%,
+    calc(100% - 30px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+  animation: l10 1s infinite;
+  transform: translate(calc(0% + var(--v, 0%)));
+}
+.arrow:after {
+  --v: -100%;
+}
+@keyframes l10 {
+  80%,
+  100% {
+    transform: translate(calc(100% + var(--v, 0%)));
+  }
 }

@@ -21,6 +21,31 @@ const Contact = ({ setSelectedPage }: Props) => {
     }
   };
 
+  const parentVariant = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.8 } },
+  };
+
+  const childrenVariant1 = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const childrenVariant2 = {
+    hidden: { opacity: 0, y: 100, rotate: 90 },
+    visible: { opacity: 1, y: 0, rotate: 90 },
+  };
+
+  const childrenVariant3 = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const childrenVariant4 = {
+    hidden: { opacity: 0, x: 100, rotate: 180 },
+    visible: { opacity: 1, x: 0, rotate: 180 },
+  };
+
   return (
     <div id="contact" className="contact">
       <motion.div
@@ -122,6 +147,30 @@ const Contact = ({ setSelectedPage }: Props) => {
                 Send
               </button>
             </form>
+          </motion.div>
+          <motion.div
+            className="animated-text"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={parentVariant}
+          >
+            <motion.div className="word1" variants={childrenVariant1}>
+              Let's
+            </motion.div>
+            <motion.div className="word2" variants={childrenVariant2}>
+              Build
+            </motion.div>
+            <motion.div className="word3" variants={childrenVariant3}>
+              Future
+            </motion.div>
+            <motion.div className="word4" variants={childrenVariant1}>
+              Together.
+            </motion.div>
+            <motion.div
+              className="arrow"
+              variants={childrenVariant4}
+            ></motion.div>
           </motion.div>
         </div>
       </motion.div>
