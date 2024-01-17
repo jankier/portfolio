@@ -18,6 +18,12 @@
   .backend-container {
     padding: 2rem !important;
   }
+  .other-container {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
 }
 
 .experience {
@@ -64,6 +70,7 @@
   justify-content: center;
   align-items: center;
   gap: 8rem;
+  padding-bottom: 4rem;
 }
 
 .experience-elements > div {
@@ -85,7 +92,32 @@
   padding: 4rem;
 }
 
-.frontend-container-bg {
+.other-container {
+  position: relative;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  transition: 0.5s ease-in-out;
+  min-height: 280px;
+}
+
+.other-container > span {
+  text-align: center;
+  font-size: 1.75rem;
+  transition: 0.5s ease-in-out;
+  color: var(--text);
+  padding-bottom: 2rem;
+}
+
+.experience-elements > div > span {
+  font-size: 1.75rem;
+  transition: 0.5s ease-in-out;
+  color: var(--text);
+  padding-bottom: 2rem;
+}
+
+.experience-container-bg {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -96,7 +128,7 @@
   --c: var(--cube1) 25%, var(--cube3) 0 50%, var(--sidebar-background) 0 75%,
     var(--cube1) 0;
 }
-.frontend-container-bg:before {
+.experience-container-bg:before {
   content: "";
   background: linear-gradient(90deg, var(--c)),
     linear-gradient(-90deg, var(--c));
@@ -106,7 +138,7 @@
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-.frontend-container-bg:after {
+.experience-container-bg:after {
   content: "";
   background: linear-gradient(90deg, var(--c)),
     linear-gradient(-90deg, var(--c));
@@ -117,37 +149,6 @@
   border-bottom-left-radius: 20px;
 }
 
-.backend-container-bg {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: grid;
-  --c: var(--cube1) 25%, var(--cube3) 0 50%, var(--sidebar-background) 0 75%,
-    var(--cube1) 0;
-}
-.backend-container-bg:before {
-  content: "";
-  background: linear-gradient(90deg, var(--c)),
-    linear-gradient(-90deg, var(--c));
-  background-size: 400% 52%;
-  background-repeat: no-repeat;
-  animation: l13 6s infinite;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-}
-.backend-container-bg:after {
-  content: "";
-  background: linear-gradient(90deg, var(--c)),
-    linear-gradient(-90deg, var(--c));
-  background-size: 400% 52%;
-  background-repeat: no-repeat;
-  animation: l13 6s infinite;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
 @keyframes l13 {
   0% {
     background-position: calc(3 * 100% / 3) 0, calc(0 * 100% / 3) 100%;
@@ -166,19 +167,13 @@
   }
 }
 
-.experience-elements > div > span {
-  font-size: 1.75rem;
-  transition: 0.5s ease-in-out;
-  color: var(--text);
-  padding-bottom: 2rem;
-}
-
 .skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   align-items: center;
+  justify-content: center;
 }
 
 .skill {
@@ -186,6 +181,7 @@
   align-items: center;
   gap: 1rem;
   color: var(--text);
+  transition: 0.5s ease-in-out;
 }
 
 .skill-level {
