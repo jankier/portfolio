@@ -11,6 +11,7 @@
     flex-direction: column !important;
     align-items: start !important;
     margin-left: calc(50% - 4.5rem) !important;
+    min-width: 190px !important;
   }
   .frontend-container {
     padding: 2rem !important;
