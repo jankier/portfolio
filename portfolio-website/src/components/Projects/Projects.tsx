@@ -15,7 +15,7 @@ const Projects = ({ setSelectedPage }: Props) => {
   const project_ref = useRef(null);
   const isInView_project = useInView(project_ref, {
     once: true,
-    amount: isAboveMediumScreen ? 1 : 0.2,
+    amount: isAboveMediumScreen ? 0.6 : 0.2,
   });
 
   return (
