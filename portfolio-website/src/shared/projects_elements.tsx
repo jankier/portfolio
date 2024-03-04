@@ -2,6 +2,7 @@ import { ProjectType } from "./types";
 import vetlab_img from "../assets/vetlab-project-img.jpg";
 import gymbros_img from "../assets/gymbros-project-img.jpg";
 import spotifytoyoutube_img from "../assets/spotifytoyoutube-project-img.jpg";
+import besidethepark_img from "../assets/besidethepark-project-img.jpg";
 
 export const projects_elements: Array<ProjectType> = [
   {
@@ -29,5 +30,14 @@ export const projects_elements: Array<ProjectType> = [
     title: "SpotifyToYoutube",
     github: "https://github.com/jankier/spotify-to-youtube-app",
     demo: "Demo",
+  },
+  {
+    image: (
+      <img src={besidethepark_img} alt="besidethepark recrutment task"></img>
+    ),
+    desc: "Besidethepark recruitment task.",
+    title: "Recruitment task",
+    github: "https://github.com/jankier/besidethepark-zadanie-rekrutacyjne",
+    demo: "https://besidethepark-zadanie-rekrutacyjne.pages.dev/episodes",
   },
 ];
